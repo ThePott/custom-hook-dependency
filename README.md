@@ -1,77 +1,31 @@
-## 설치할 것
-1. react-router
-2. MUI & MUI Icons
-3. tailwindcss
-4. Zustand
-5. node:type
+# ❓ Custom Hooks Are Just Extended Component Code!
+**Why you need to think of custom hooks as part of your component**
+
+## 📖 Introduction
+**Custom hooks are NOT separate entities** - they're just refactored component code!
+When you use a custom hook, imagine copy-pasting all its code directly into your component. That's exactly how React treats it.
+
+This app demonstrates why understanding this concept is crucial for dependency arrays in custom hooks.
+
+## ✨ Main Feature
+1. **Custom hooks = Component extension**: See how custom hook code behaves exactly like component code
+2. **Dependency array implications**: When you understand custom hooks as extended component code, dependency array rules become obvious
+3. **Side-by-side comparison**: Compare what happens with and without proper dependencies
+
+## 🛠️ Tech Stack
+This app demonstrates:
+1. React custom hooks
+2. React useEffect hook
+
+
+## 📦 Installation
+In the project directory, you can run:
 ```bash
-npm install react-router
-npm install @mui/material @emotion/react @emotion/styled @mui/icons-material
-npm install tailwindcss @tailwindcss/vite
-npm install zustand
-npm install --save @types/node
+git clone https://github.com/ThePott/custom-hook-dependency
+cd custom-hook-dependency
+npm install
 ```
-
-
-## 파일 수정 ---- Fold Level 2
-
-### index.css
-```css
-@import "tailwindcss";
-```
-### tsconfig.app.json, tsconfig.node.json
-```json
- /* Path mapping */
-    "baseUrl": ".",
-    "paths": {
-      "@/*": [
-        "./*"
-      ]
-    },
-```
-
-### vite.config.ts
-```ts
-import path from 'path';
-import { fileURLToPath } from 'url';
-
-import tailwindcss from '@tailwindcss/vite';
-import react from '@vitejs/plugin-react';
-import { defineConfig } from 'vite';
-
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
-
-// https://vite.dev/config/
-export default defineConfig({
-  plugins: [react(), tailwindcss(),],
-  resolve: {
-    alias: [
-      { find: "@", replacement: path.resolve(__dirname, ".") },
-    ],
-  },
-})
-```
-
-### App.css 삭제
-
-### App.tsx
-```tsx
-import './App.css' // <<<<---- 삭제
-```
-
-### index.css
-```css
-:root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-
-  color-scheme: only dark;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-```
+## ✅ Requirements
+* Node.js
+## 📜 License
+MIT
